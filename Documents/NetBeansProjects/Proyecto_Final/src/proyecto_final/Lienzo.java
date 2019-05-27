@@ -19,12 +19,10 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
-
 /**
  *
  * @author Miguel Rodriguez
  */
-
 public class Lienzo extends JPanel implements MouseListener {
 
     // Vector que contendra los circulos y lineas
@@ -91,6 +89,7 @@ public class Lienzo extends JPanel implements MouseListener {
         this.add(pmenu);
     }
     // Funcion que grafica 
+    @Override
     public void paint(Graphics g) {
         super.paint(g);
         for (Circulo objCirculo : Circulos) {
@@ -127,6 +126,7 @@ public class Lienzo extends JPanel implements MouseListener {
 
                             // Obtiene la posicion de las filas para guardar en arreglo peso 
                             pos_1 = get_pos(objCirculo);
+                            
                         } else {
                             // Llena con la segunda posicion 2
                             //crea el objeto point en el cual manda por parametro la posicion del circulo seleccionado
@@ -135,6 +135,7 @@ public class Lienzo extends JPanel implements MouseListener {
                             if (p2 != null) {
                                 // Obtiene la Posicion columnas para guardar en arreglo de Peso
                                 pos_2 = get_pos(objCirculo);
+                                
                                 Matriz_pe[pos_1][pos_1] = 0;
                                 Matriz_pe[pos_2][pos_2] = 0;
                                 Matriz_pe[pos_1][pos_2] = numb;
@@ -218,40 +219,40 @@ public class Lienzo extends JPanel implements MouseListener {
      */
     public int get_pos(Circulo objCirculo) {
         int pos_1 = 0;
-        if (objCirculo.nombre == "a") {
+        if ("a".equals(objCirculo.nombre)) {
             pos_1 = 0;
         }
-        if (objCirculo.nombre == "b") {
+        if ("b".equals(objCirculo.nombre)) {
             pos_1 = 1;
         }
-        if (objCirculo.nombre == "c") {
+        if ("c".equals(objCirculo.nombre)) {
             pos_1 = 2;
         }
-        if (objCirculo.nombre == "d") {
+        if ("d".equals(objCirculo.nombre)) {
             pos_1 = 3;
         }
-        if (objCirculo.nombre == "e") {
+        if ("e".equals(objCirculo.nombre)) {
             pos_1 = 4;
         }
-        if (objCirculo.nombre == "f") {
+        if ("f".equals(objCirculo.nombre)) {
             pos_1 = 5;
         }
-        if (objCirculo.nombre == "g") {
+        if ("g".equals(objCirculo.nombre)) {
             pos_1 = 6;
         }
-        if (objCirculo.nombre == "h") {
+        if ("h".equals(objCirculo.nombre)) {
             pos_1 = 7;
         }
-        if (objCirculo.nombre == "i") {
+        if ("i".equals(objCirculo.nombre)) {
             pos_1 = 8;
         }
-        if (objCirculo.nombre == "j") {
+        if ("j".equals(objCirculo.nombre)) {
             pos_1 = 9;
         }
-        if (objCirculo.nombre == "k") {
+        if ("k".equals(objCirculo.nombre)) {
             pos_1 = 10;
         }
-        if (objCirculo.nombre == "l") {
+        if ("l".equals(objCirculo.nombre)) {
             pos_1 = 11;
         }
         return pos_1;
